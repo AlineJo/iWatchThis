@@ -1,6 +1,5 @@
 <?php
 include('./conn.php');
-include('./constents.php');
 
 $data = json_decode(file_get_contents('php://input'), true);
 
@@ -24,16 +23,17 @@ function initInsertContent()
 
 function insertContent()
 {
+    include('./constents.php');
     global $data;
     global $cnn;
 
     //content vars
-    $title = $data["title"];
-    $websiteName = $data["website"];
-    $status = $data["status"];
-    $description = $data["description"];
-    $contentLink = $data["contentLink"];
-    $imgSrc = $data["imgSrc"];
+    $title = $data[$KEY_title];
+    $websiteName = $data[$KEY_website];
+    $status = $data[$KEY_status];
+    $description = $data[$KEY_description];
+    $contentLink = $data[$KEY_contentLink];
+    $imgSrc = $data[$KEY_imgSrc];
 
     $contentId = -1;
 
@@ -56,12 +56,13 @@ function insertContent()
 
 function insertSeason($contentId)
 {
+    include('./constents.php');
     global $data;
     global $cnn;
 
     //season vars
-    $season = $data["season"];
-    $episode = $data["episode"];
+    $season = $data[$KEY_season];
+    $episode = $data[$KEY_episode];
     $seasonId = -1;
 
     if ($contentId != -1) {
@@ -84,10 +85,11 @@ function insertSeason($contentId)
 
 function insertGenra($contentId)
 {
+    include('./constents.php');
     global $data;
     global $cnn;
 
-    $ganrasArray = $data["ganrasArray"];
+    $ganrasArray = $data[$KEY_ganrasArray];
 
 
     if ($contentId != -1) {
