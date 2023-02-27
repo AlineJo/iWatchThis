@@ -1,6 +1,8 @@
 <?php
 
 //JSON KEYS
+$KEY_contentId = "contentId";
+$KEY_contentSeasonId = "seasonId";
 $KEY_title = "title";
 $KEY_website = "website";
 $KEY_status = "status";
