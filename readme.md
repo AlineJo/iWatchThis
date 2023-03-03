@@ -45,9 +45,9 @@ ContentGenraMap AS CGM
 ON CGM.contentId = C.id
 GROUP BY C.id`
 
->2. **ViewContentPlaned**
+>2. **ViewContentPlanned**
 
-`CREATE VIEW ViewContentPlaned AS SELECT C.* , 
+`CREATE VIEW ViewContentPlanned AS SELECT C.* , 
 group_concat(distinct CGM.genra separator ', ') AS genra 
 FROM
 Content AS C
@@ -55,7 +55,7 @@ JOIN
 ContentGenraMap AS CGM
 ON CGM.contentId = C.id
 GROUP BY C.id
-where C.status = 'planed'`
+where C.status = 'planned'`
 
 
 >3. **ViewContentNow**
