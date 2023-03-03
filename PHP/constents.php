@@ -16,7 +16,7 @@ $KEY_ganrasArray = "ganrasArray";
 
 // View KEYS
 $VIEW_ViewContentAll = "ViewContentAll";
-$VIEW_ViewContentPlaned = "ViewContentPlaned";
+$VIEW_ViewContentPlanned = "ViewContentPlanned";
 $VIEW_ViewContentNow = "ViewContentNow";
 $VIEW_ViewContentDone = "ViewContentDone";
 
