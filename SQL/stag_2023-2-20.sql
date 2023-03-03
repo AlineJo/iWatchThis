@@ -44,9 +44,9 @@ CREATE TABLE `Content` (
 INSERT INTO `Content` (`id`, `title`, `websiteName`, `status`, `description`, `contentLink`, `imgSrc`) VALUES
 (4, 'My Hero Academia', '9anime', 'now', '', 'https://9animetv.to/watch/my-hero-academia-season-6-18154?ep=97604', 'https://img.bunnycdnn.ru/_r/300x400/100/20/b7/20b7580c1abdf45a6eaf4826fc9fdf33/20b7580c1abdf45a6eaf4826fc9fdf33.jpg'),
 (5, 'Monster', 'wco', 'done', '', 'https://www.wcoanimedub.tv/anime/monster', 'https://cdn.animationexplore.com/catimg/24830.jpg'),
-(6, 'God Eater', '9anime', 'planed', '', 'https://9animetv.to/watch/god-eater-2215?ep=26241', 'https://img.bunnycdnn.ru/_r/300x400/100/20/1d/201d3b9be60ba94f08b2110f483f47a8/201d3b9be60ba94f08b2110f483f47a8.jpg'),
-(7, 'post man test', 'postman.com', 'planed', 'some deec', 'https://9animetv.to/watch/my-hero-academia-season-6-18154?ep=97604', 'https://img.bunnycdnn.ru/_r/300x400/100/20/b7/20b7580c1abdf45a6eaf4826fc9fdf33/20b7580c1abdf45a6eaf4826fc9fdf33.jpg'),
-(8, 'post man test2', 'postman.com', 'planed', 'some deec', 'https://9animetv.to/watch/my-hero-academia-season-6-18154?ep=97604', 'https://img.bunnycdnn.ru/_r/300x400/100/20/b7/20b7580c1abdf45a6eaf4826fc9fdf33/20b7580c1abdf45a6eaf4826fc9fdf33.jpg');
+(6, 'God Eater', '9anime', 'planned', '', 'https://9animetv.to/watch/god-eater-2215?ep=26241', 'https://img.bunnycdnn.ru/_r/300x400/100/20/1d/201d3b9be60ba94f08b2110f483f47a8/201d3b9be60ba94f08b2110f483f47a8.jpg'),
+(7, 'post man test', 'postman.com', 'planned', 'some deec', 'https://9animetv.to/watch/my-hero-academia-season-6-18154?ep=97604', 'https://img.bunnycdnn.ru/_r/300x400/100/20/b7/20b7580c1abdf45a6eaf4826fc9fdf33/20b7580c1abdf45a6eaf4826fc9fdf33.jpg'),
+(8, 'post man test2', 'postman.com', 'planned', 'some deec', 'https://9animetv.to/watch/my-hero-academia-season-6-18154?ep=97604', 'https://img.bunnycdnn.ru/_r/300x400/100/20/b7/20b7580c1abdf45a6eaf4826fc9fdf33/20b7580c1abdf45a6eaf4826fc9fdf33.jpg');
 
 -- --------------------------------------------------------
 
@@ -152,7 +152,7 @@ CREATE TABLE `ContentStatus` (
 INSERT INTO `ContentStatus` (`status`) VALUES
 ('done'),
 ('now'),
-('planed');
+('planned');
 
 -- --------------------------------------------------------
 
@@ -205,10 +205,10 @@ CREATE TABLE `viewcontentnow` (
 -- --------------------------------------------------------
 
 --
--- Stand-in structure for view `viewcontentplaned`
+-- Stand-in structure for view `viewcontentplanned`
 -- (See below for the actual view)
 --
-CREATE TABLE `viewcontentplaned` (
+CREATE TABLE `viewcontentplanned` (
 `id` int(11)
 ,`title` varchar(40)
 ,`websiteName` varchar(20)
@@ -248,11 +248,11 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 -- --------------------------------------------------------
 
 --
--- Structure for view `viewcontentplaned`
+-- Structure for view `viewcontentplanned`
 --
-DROP TABLE IF EXISTS `viewcontentplaned`;
+DROP TABLE IF EXISTS `viewcontentplanned`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `iwatchthisstag`.`viewcontentplaned`  AS SELECT `C`.`id` AS `id`, `C`.`title` AS `title`, `C`.`websiteName` AS `websiteName`, `C`.`status` AS `status`, `C`.`contentLink` AS `contentLink`, `C`.`imgSrc` AS `imgSrc`, group_concat(distinct `CGM`.`genra` separator ', ') AS `genra` FROM (`iwatchthisstag`.`content` `C` join `iwatchthisstag`.`contentgenramap` `CGM` on(`CGM`.`contentId` = `C`.`id`)) WHERE `C`.`status` = 'planed' GROUP BY `C`.`id`  ;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `iwatchthisstag`.`viewcontentplanned`  AS SELECT `C`.`id` AS `id`, `C`.`title` AS `title`, `C`.`websiteName` AS `websiteName`, `C`.`status` AS `status`, `C`.`contentLink` AS `contentLink`, `C`.`imgSrc` AS `imgSrc`, group_concat(distinct `CGM`.`genra` separator ', ') AS `genra` FROM (`iwatchthisstag`.`content` `C` join `iwatchthisstag`.`contentgenramap` `CGM` on(`CGM`.`contentId` = `C`.`id`)) WHERE `C`.`status` = 'planned' GROUP BY `C`.`id`  ;
 
 --
 -- Indexes for dumped tables
