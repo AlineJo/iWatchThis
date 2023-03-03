@@ -1,0 +1,46 @@
+:root {
+    /* colors */
+    --color-background: #6f42c1;
+    --color-jumbotron-background: #16181b;
+
+    /* font family */
+    --font-family-primary: "Georgia";
+}
+
+body{
+    background-color: var(--color-background);
+}
+
+.sgPlannedContainer {
+    height: auto;
+    width: 100%;
+}
+
+.sgOverflow_x {
+    overflow-x: scroll;
+}
+
+.sgContentCard {
+    max-width: 540px;
+    transition: transform .35s;
+    -moz-transition: all .35s ease;
+    -o-transition: all .35s ease;
+    -webkit-transition: all .35s ease;
+    /* Animation */
+}
+
+.sgContentCard:hover {
+    transform: scale(1.25);
+    z-index: 10;
+
+}
+
+
+.sgMarginTop_32 {
+    margin-top: 32px;
+}
+
+
+.sgMarginRight_16 {
+    margin-right: 16px;
+}
