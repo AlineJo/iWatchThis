@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Feb 20, 2023 at 04:04 AM
+-- Generation Time: Mar 05, 2023 at 11:56 AM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.1.12
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `iWatchThis`
+-- Database: `iWatchThisStag`
 --
 
 -- --------------------------------------------------------
@@ -42,11 +42,12 @@ CREATE TABLE `Content` (
 --
 
 INSERT INTO `Content` (`id`, `title`, `websiteName`, `status`, `description`, `contentLink`, `imgSrc`) VALUES
-(4, 'My Hero Academia', '9anime', 'now', '', 'https://9animetv.to/watch/my-hero-academia-season-6-18154?ep=97604', 'https://img.bunnycdnn.ru/_r/300x400/100/20/b7/20b7580c1abdf45a6eaf4826fc9fdf33/20b7580c1abdf45a6eaf4826fc9fdf33.jpg'),
-(5, 'Monster', 'wco', 'done', '', 'https://www.wcoanimedub.tv/anime/monster', 'https://cdn.animationexplore.com/catimg/24830.jpg'),
-(6, 'God Eater', '9anime', 'planned', '', 'https://9animetv.to/watch/god-eater-2215?ep=26241', 'https://img.bunnycdnn.ru/_r/300x400/100/20/1d/201d3b9be60ba94f08b2110f483f47a8/201d3b9be60ba94f08b2110f483f47a8.jpg'),
-(7, 'post man test', 'postman.com', 'planned', 'some deec', 'https://9animetv.to/watch/my-hero-academia-season-6-18154?ep=97604', 'https://img.bunnycdnn.ru/_r/300x400/100/20/b7/20b7580c1abdf45a6eaf4826fc9fdf33/20b7580c1abdf45a6eaf4826fc9fdf33.jpg'),
-(8, 'post man test2', 'postman.com', 'planned', 'some deec', 'https://9animetv.to/watch/my-hero-academia-season-6-18154?ep=97604', 'https://img.bunnycdnn.ru/_r/300x400/100/20/b7/20b7580c1abdf45a6eaf4826fc9fdf33/20b7580c1abdf45a6eaf4826fc9fdf33.jpg');
+(1, 'Yousuf', 'postman.com', 'planned', 'some deec', 'https://9animetv.to/watch/my-hero-academia-season-6-18154?ep=97604', 'https://img.bunnycdnn.ru/_r/300x400/100/20/b7/20b7580c1abdf45a6eaf4826fc9fdf33/20b7580c1abdf45a6eaf4826fc9fdf33.jpg'),
+(2, 'post man test399', 'postman.com', 'planned', 'some deec', 'https://9animetv.to/watch/my-hero-academia-season-6-18154?ep=97604', 'https://img.bunnycdnn.ru/_r/300x400/100/20/b7/20b7580c1abdf45a6eaf4826fc9fdf33/20b7580c1abdf45a6eaf4826fc9fdf33.jpg'),
+(3, 'post man test399', 'postman.com', 'planned', 'some deec', 'https://9animetv.to/watch/my-hero-academia-season-6-18154?ep=97604', 'https://img.bunnycdnn.ru/_r/300x400/100/20/b7/20b7580c1abdf45a6eaf4826fc9fdf33/20b7580c1abdf45a6eaf4826fc9fdf33.jpg'),
+(4, 'post man test399', 'postman.com', 'planned', 'some deec', 'https://9animetv.to/watch/my-hero-academia-season-6-18154?ep=97604', 'https://img.bunnycdnn.ru/_r/300x400/100/20/b7/20b7580c1abdf45a6eaf4826fc9fdf33/20b7580c1abdf45a6eaf4826fc9fdf33.jpg'),
+(5, 'post man test399', 'postman.com', 'planned', 'some deec', 'https://9animetv.to/watch/my-hero-academia-season-6-18154?ep=97604', 'https://img.bunnycdnn.ru/_r/300x400/100/20/b7/20b7580c1abdf45a6eaf4826fc9fdf33/20b7580c1abdf45a6eaf4826fc9fdf33.jpg'),
+(6, 'post man test399', 'postman.com', 'planned', 'some deec', 'https://9animetv.to/watch/my-hero-academia-season-6-18154?ep=97604', 'https://img.bunnycdnn.ru/_r/300x400/100/20/b7/20b7580c1abdf45a6eaf4826fc9fdf33/20b7580c1abdf45a6eaf4826fc9fdf33.jpg');
 
 -- --------------------------------------------------------
 
@@ -93,25 +94,24 @@ CREATE TABLE `ContentGenraMap` (
 --
 
 INSERT INTO `ContentGenraMap` (`id`, `contentId`, `genra`) VALUES
-(1, 4, 'Action'),
-(2, 4, 'School'),
-(3, 4, 'Shounen'),
-(4, 4, 'Super Power'),
-(5, 5, 'Drama'),
-(6, 5, 'Horror'),
-(7, 5, 'Mystery'),
-(8, 5, 'Psychological'),
-(9, 5, 'Thriller'),
-(10, 6, 'Action'),
-(11, 6, 'Fantasy'),
-(12, 6, 'Sci-Fi'),
-(13, 6, 'Military'),
-(14, 7, 'Action'),
-(15, 7, 'School'),
-(16, 7, 'Fantasy'),
-(17, 8, 'Action'),
-(18, 8, 'School'),
-(19, 8, 'Fantasy');
+(1, 1, 'Action'),
+(2, 1, 'School'),
+(3, 1, 'Fantasy'),
+(4, 2, 'Action'),
+(5, 2, 'School'),
+(6, 2, 'Fantasy'),
+(7, 3, 'Action'),
+(8, 3, 'School'),
+(9, 3, 'Fantasy'),
+(10, 4, 'Action'),
+(11, 4, 'School'),
+(12, 4, 'Fantasy'),
+(13, 5, 'Action'),
+(14, 5, 'School'),
+(15, 5, 'Fantasy'),
+(16, 6, 'Action'),
+(17, 6, 'School'),
+(18, 6, 'Fantasy');
 
 -- --------------------------------------------------------
 
@@ -122,18 +122,21 @@ INSERT INTO `ContentGenraMap` (`id`, `contentId`, `genra`) VALUES
 CREATE TABLE `ContentSeason` (
   `id` int(11) NOT NULL,
   `contentId` int(11) NOT NULL,
-  `episode` int(4) NOT NULL,
-  `season` int(3) NOT NULL
+  `season` int(3) NOT NULL,
+  `episode` int(4) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `ContentSeason`
 --
 
-INSERT INTO `ContentSeason` (`id`, `contentId`, `episode`, `season`) VALUES
-(1, 4, 20, 6),
-(2, 7, 20, 6),
-(3, 8, 20, 6);
+INSERT INTO `ContentSeason` (`id`, `contentId`, `season`, `episode`) VALUES
+(1, 1, 6, 20),
+(2, 2, 6, 20),
+(3, 3, 6, 20),
+(4, 4, 6, 20),
+(5, 5, 6, 20),
+(6, 6, 6, 20);
 
 -- --------------------------------------------------------
 
@@ -165,9 +168,12 @@ CREATE TABLE `viewcontentall` (
 ,`title` varchar(40)
 ,`websiteName` varchar(20)
 ,`status` varchar(11)
+,`description` text
 ,`contentLink` text
 ,`imgSrc` text
 ,`genra` mediumtext
+,`season` int(3)
+,`episode` int(4)
 );
 
 -- --------------------------------------------------------
@@ -181,9 +187,12 @@ CREATE TABLE `viewcontentdone` (
 ,`title` varchar(40)
 ,`websiteName` varchar(20)
 ,`status` varchar(11)
+,`description` text
 ,`contentLink` text
 ,`imgSrc` text
 ,`genra` mediumtext
+,`season` int(3)
+,`episode` int(4)
 );
 
 -- --------------------------------------------------------
@@ -197,9 +206,12 @@ CREATE TABLE `viewcontentnow` (
 ,`title` varchar(40)
 ,`websiteName` varchar(20)
 ,`status` varchar(11)
+,`description` text
 ,`contentLink` text
 ,`imgSrc` text
 ,`genra` mediumtext
+,`season` int(3)
+,`episode` int(4)
 );
 
 -- --------------------------------------------------------
@@ -213,9 +225,12 @@ CREATE TABLE `viewcontentplanned` (
 ,`title` varchar(40)
 ,`websiteName` varchar(20)
 ,`status` varchar(11)
+,`description` text
 ,`contentLink` text
 ,`imgSrc` text
 ,`genra` mediumtext
+,`season` int(3)
+,`episode` int(4)
 );
 
 -- --------------------------------------------------------
@@ -225,7 +240,7 @@ CREATE TABLE `viewcontentplanned` (
 --
 DROP TABLE IF EXISTS `viewcontentall`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `iWatchThis`.`viewcontentall`  AS SELECT `C`.`id` AS `id`, `C`.`title` AS `title`, `C`.`websiteName` AS `websiteName`, `C`.`status` AS `status`, `C`.`contentLink` AS `contentLink`, `C`.`imgSrc` AS `imgSrc`, group_concat(distinct `CGM`.`genra` separator ', ') AS `genra` FROM (`iWatchThis`.`content` `C` join `iWatchThis`.`contentgenramap` `CGM` on(`CGM`.`contentId` = `C`.`id`)) GROUP BY `C`.`id`  ;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `iwatchthisstag`.`viewcontentall`  AS SELECT `C`.`id` AS `id`, `C`.`title` AS `title`, `C`.`websiteName` AS `websiteName`, `C`.`status` AS `status`, `C`.`description` AS `description`, `C`.`contentLink` AS `contentLink`, `C`.`imgSrc` AS `imgSrc`, group_concat(distinct `CGM`.`genra` separator ', ') AS `genra`, `CS`.`season` AS `season`, `CS`.`episode` AS `episode` FROM ((`iwatchthisstag`.`content` `C` join `iwatchthisstag`.`contentgenramap` `CGM` on(`CGM`.`contentId` = `C`.`id`)) join `iwatchthisstag`.`contentseason` `CS` on(`C`.`id` = `CS`.`contentId`)) GROUP BY `C`.`id`  ;
 
 -- --------------------------------------------------------
 
@@ -234,7 +249,7 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 --
 DROP TABLE IF EXISTS `viewcontentdone`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `iWatchThis`.`viewcontentdone`  AS SELECT `C`.`id` AS `id`, `C`.`title` AS `title`, `C`.`websiteName` AS `websiteName`, `C`.`status` AS `status`, `C`.`contentLink` AS `contentLink`, `C`.`imgSrc` AS `imgSrc`, group_concat(distinct `CGM`.`genra` separator ', ') AS `genra` FROM (`iWatchThis`.`content` `C` join `iWatchThis`.`contentgenramap` `CGM` on(`CGM`.`contentId` = `C`.`id`)) WHERE `C`.`status` = 'done' GROUP BY `C`.`id`  ;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `iwatchthisstag`.`viewcontentdone`  AS SELECT `C`.`id` AS `id`, `C`.`title` AS `title`, `C`.`websiteName` AS `websiteName`, `C`.`status` AS `status`, `C`.`description` AS `description`, `C`.`contentLink` AS `contentLink`, `C`.`imgSrc` AS `imgSrc`, group_concat(distinct `CGM`.`genra` separator ', ') AS `genra`, `CS`.`season` AS `season`, `CS`.`episode` AS `episode` FROM ((`iwatchthisstag`.`content` `C` join `iwatchthisstag`.`contentgenramap` `CGM` on(`CGM`.`contentId` = `C`.`id`)) join `iwatchthisstag`.`contentseason` `CS` on(`C`.`id` = `CS`.`contentId`)) WHERE `C`.`status` = 'done' GROUP BY `C`.`id`  ;
 
 -- --------------------------------------------------------
 
@@ -243,7 +258,7 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 --
 DROP TABLE IF EXISTS `viewcontentnow`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `iWatchThis`.`viewcontentnow`  AS SELECT `C`.`id` AS `id`, `C`.`title` AS `title`, `C`.`websiteName` AS `websiteName`, `C`.`status` AS `status`, `C`.`contentLink` AS `contentLink`, `C`.`imgSrc` AS `imgSrc`, group_concat(distinct `CGM`.`genra` separator ', ') AS `genra` FROM (`iWatchThis`.`content` `C` join `iWatchThis`.`contentgenramap` `CGM` on(`CGM`.`contentId` = `C`.`id`)) WHERE `C`.`status` = 'now' GROUP BY `C`.`id`  ;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `iwatchthisstag`.`viewcontentnow`  AS SELECT `C`.`id` AS `id`, `C`.`title` AS `title`, `C`.`websiteName` AS `websiteName`, `C`.`status` AS `status`, `C`.`description` AS `description`, `C`.`contentLink` AS `contentLink`, `C`.`imgSrc` AS `imgSrc`, group_concat(distinct `CGM`.`genra` separator ', ') AS `genra`, `CS`.`season` AS `season`, `CS`.`episode` AS `episode` FROM ((`iwatchthisstag`.`content` `C` join `iwatchthisstag`.`contentgenramap` `CGM` on(`CGM`.`contentId` = `C`.`id`)) join `iwatchthisstag`.`contentseason` `CS` on(`C`.`id` = `CS`.`contentId`)) WHERE `C`.`status` = 'now' GROUP BY `C`.`id`  ;
 
 -- --------------------------------------------------------
 
@@ -252,7 +267,7 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 --
 DROP TABLE IF EXISTS `viewcontentplanned`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `iWatchThis`.`viewcontentplanned`  AS SELECT `C`.`id` AS `id`, `C`.`title` AS `title`, `C`.`websiteName` AS `websiteName`, `C`.`status` AS `status`, `C`.`contentLink` AS `contentLink`, `C`.`imgSrc` AS `imgSrc`, group_concat(distinct `CGM`.`genra` separator ', ') AS `genra` FROM (`iWatchThis`.`content` `C` join `iWatchThis`.`contentgenramap` `CGM` on(`CGM`.`contentId` = `C`.`id`)) WHERE `C`.`status` = 'planned' GROUP BY `C`.`id`  ;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `iwatchthisstag`.`viewcontentplanned`  AS SELECT `C`.`id` AS `id`, `C`.`title` AS `title`, `C`.`websiteName` AS `websiteName`, `C`.`status` AS `status`, `C`.`description` AS `description`, `C`.`contentLink` AS `contentLink`, `C`.`imgSrc` AS `imgSrc`, group_concat(distinct `CGM`.`genra` separator ', ') AS `genra`, `CS`.`season` AS `season`, `CS`.`episode` AS `episode` FROM ((`iwatchthisstag`.`content` `C` join `iwatchthisstag`.`contentgenramap` `CGM` on(`CGM`.`contentId` = `C`.`id`)) join `iwatchthisstag`.`contentseason` `CS` on(`C`.`id` = `CS`.`contentId`)) WHERE `C`.`status` = 'planned' GROUP BY `C`.`id`  ;
 
 --
 -- Indexes for dumped tables
@@ -300,19 +315,19 @@ ALTER TABLE `ContentStatus`
 -- AUTO_INCREMENT for table `Content`
 --
 ALTER TABLE `Content`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `ContentGenraMap`
 --
 ALTER TABLE `ContentGenraMap`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT for table `ContentSeason`
 --
 ALTER TABLE `ContentSeason`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- Constraints for dumped tables
@@ -322,7 +337,7 @@ ALTER TABLE `ContentSeason`
 -- Constraints for table `Content`
 --
 ALTER TABLE `Content`
-  ADD CONSTRAINT `cn_status` FOREIGN KEY (`status`) REFERENCES `ContentStatus` (`status`);
+  ADD CONSTRAINT `cn_status` FOREIGN KEY (`status`) REFERENCES `ContentStatus` (`status`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `ContentGenraMap`
