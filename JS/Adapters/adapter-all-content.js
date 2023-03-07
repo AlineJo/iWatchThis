@@ -1,8 +1,10 @@
-import { fetchPlannedContent } from "../Fetches/fetch-planned-content.js";
+import { fetchPlannedContent } from "../Fetches/fetch-all-content.js";
 
 
 
 let plannedContainer = document.getElementById("plannedContainer")
+let nowContainer = document.getElementById("nowContainer")
+let doneContainer = document.getElementById("doneContainer")
 let cardTemplate = document.getElementById("cardTemplate")
 
 fetchPlannedContent();
@@ -11,7 +13,7 @@ export function contentAdapter(content) {
 
     content.forEach(contentItem => {
         const clone = cardTemplate.content.cloneNode(true)
-        
+
         let contentCard = clone.getElementById("contentCard")
         let contentImg = clone.getElementById("contentImg")
         let contentTitle = clone.getElementById("contentTitle")
@@ -38,15 +40,21 @@ export function contentAdapter(content) {
         contentImg.src = contentItem.imgSrc
         contentTitle.innerText = contentItem.title
         contentDescription.innerText = contentItem.description
-        contentSeasone.innerText = "Season "+contentItem.season
-        contentEpisode.innerText = "Episode "+contentItem.episode
-        contentWebsite.innerText = contentItem.websiteName
+        contentSeasone.innerText = "Season " + contentItem.season
+        contentEpisode.innerText = "Episode " + contentItem.episode
+        contentWebsite.innerText = "Website " + contentItem.websiteName
 
-        contentCard.onclick = function(){
+        contentCard.onclick = function () {
             window.open(contentItem.contentLink, "_blank")
         }
 
-        plannedContainer.append(clone)
+        switch (contentItem.status) {
+            case "planned": { plannedContainer.append(clone); break; }
+            case "now": { nowContainer.append(clone); break; }
+            case "done": { doneContainer.append(clone); break; }
+        }
+
+
     });
 }
 
