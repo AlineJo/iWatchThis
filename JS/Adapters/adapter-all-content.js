@@ -8,6 +8,7 @@ let doneContainer = document.getElementById("doneContainer")
 let cardTemplate = document.getElementById("cardTemplate")
 
 fetchPlannedContent();
+initClickables();
 
 export function contentAdapter(content) {
 
@@ -61,4 +62,15 @@ export function contentAdapter(content) {
 
 
 
+function initClickables() {
 
+    plannedContainer.onclick = function () { toggleModal() }
+    nowContainer.onclick = function () { toggleModal() }
+    doneContainer.onclick = function () { toggleModal() }
+}
+
+function toggleModal() {
+    $(function () {
+        $('#idInsertNewContentModal').modal('toggle');
+    });
+}
