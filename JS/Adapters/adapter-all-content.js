@@ -46,7 +46,7 @@ export function contentAdapter(content) {
         contentEpisode.innerText = "Episode " + contentItem.episode
         contentWebsite.innerText = "Website " + contentItem.websiteName
 
-        contentCard.onclick = function () {
+        contentWebsite.onclick = function () {
             window.open(contentItem.contentLink, "_blank")
         }
 
@@ -69,12 +69,5 @@ function initClickables() {
     doneContainer.onclick = function () { toggleModal(doneContainer) }
 }
 
-function toggleModal(element) {
-    const staticBackdrop = document.getElementById('staticBackdrop')
-
-    // data-bs-toggle="modal" data-bs-target="#staticBackdrop"
-    element.bsToggle = "modal"
-    element.bsTarget = "#staticBackdrop"
-}
 
 

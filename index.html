@@ -14,13 +14,65 @@
 
 <body>
 
-    <!-- Modal -->
-    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+
+    <div class="container-fluid col py-2 px-5 bg-dark">
+        <h3 class="display-3 text-white">iWatchThis</h3>
+    </div>
+
+    <div class="container-fluid text-center px-5 bg-dark">
+
+        <button class="btn btn-outline-light mt-5">
+            <h3 class="display-3"  data-bs-toggle="modal" data-bs-target="#addModal">Planned</h3>
+        </button>
+        <div id="plannedContainer" class="d-flex d-flex-row sgPlannedContainer sgOverflow_x py-4 bg-dark">
+            <!-- cardTemplate Lives Here!!! -->
+        </div>
+
+        <button class="btn btn-outline-light mt-5">
+            <h3 class="display-3"  data-bs-toggle="modal" data-bs-target="#addModal">Watching Now</h3>
+        </button>
+        <div id="nowContainer" class="d-flex d-flex-row sgPlannedContainer sgOverflow_x py-4 bg-dark">
+            <!-- cardTemplate Lives Here!!! -->
+        </div>
+
+        <button class="btn btn-outline-light mt-5">
+            <h3 class="display-3" data-bs-toggle="modal" data-bs-target="#addModal">Done</h3>
+        </button>
+        <div id="doneContainer" class="d-flex d-flex-row sgPlannedContainer sgOverflow_x py-4 bg-dark">
+            <!-- cardTemplate Lives Here!!! -->
+        </div>
+
+    </div>
+
+   <!-- Edit Modal -->
+   <div class="modal fade" id="addModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+   aria-labelledby="addModalLabel" aria-hidden="true">
+   <div class="modal-dialog">
+       <div class="modal-content">
+           <div class="modal-header">
+               <h1 class="modal-title fs-5" id="addModalLabel">Add Content</h1>
+               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+           </div>
+           <div class="modal-body">
+               ...
+           </div>
+           <div class="modal-footer">
+               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+               <button type="button" class="btn btn-primary">Add</button>
+           </div>
+       </div>
+   </div>
+</div>
+<!-- Edit Modal -->
+
+
+    <!-- Edit Modal -->
+    <div class="modal fade" id="editModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="editModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="staticBackdropLabel">Modal title</h1>
+                    <h1 class="modal-title fs-5" id="editModalLabel">Modal title</h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
@@ -33,45 +85,12 @@
             </div>
         </div>
     </div>
-
-
-    <div class="container-fluid col py-2 px-5 bg-dark">
-        <h3 class="display-3 text-white">iWatchThis</h3>
-    </div>
-
-    <div class="container-fluid text-center px-5 bg-dark" style="height: 100%;">
-
-        <button class="btn btn-outline-light mt-5">
-            <h3 class="display-3">Planned</h3>
-        </button>
-        <div id="plannedContainer" class="d-flex d-flex-row sgPlannedContainer sgOverflow_x py-4 bg-dark">
-            <!-- cardTemplate Lives Here!!! -->
-        </div>
-
-        <button class="btn btn-outline-light mt-5">
-            <h3 class="display-3" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Watching Now</h3>
-        </button>
-        <div id="nowContainer" class="d-flex d-flex-row sgPlannedContainer sgOverflow_x py-4 bg-dark">
-            <!-- cardTemplate Lives Here!!! -->
-        </div>
-
-        <button class="btn btn-outline-light mt-5">
-            <h3 class="display-3" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Done</h3>
-        </button>
-        <div id="doneContainer" class="d-flex d-flex-row sgPlannedContainer sgOverflow_x py-4 bg-dark">
-            <!-- cardTemplate Lives Here!!! -->
-        </div>
-
-    </div>
-
-
-
-
+    <!-- Edit Modal -->
 
 
     <template id="cardTemplate">
 
-        <div id="contentCard" class="col-md-6 card sgContentCard mx-5 bg-dark" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+        <div id="contentCard" class="col-md-6 card sgContentCard mx-5 bg-dark">
 
             <div class="row g-0">
                 <div class="col-md-4">
@@ -84,7 +103,7 @@
 
 
 
-                        <h5 class="card-title text-white text-start d-flex">
+                        <h5 class="card-title text-white text-start d-flex" data-bs-toggle="modal" data-bs-target="#editModal">
                             <p id="contentTitle" class="flex-grow-1">Drifters</p>
 
                             <button class="btn btn-lg btn-outline-light">
