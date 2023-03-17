@@ -1,4 +1,4 @@
-import { fetchPlannedContent } from "../Fetches/fetch-all-content.js";
+import { fetchAllContent as fetchAllContent } from "../Fetches/fetch-all-content.js";
 
 
 
@@ -7,7 +7,9 @@ let nowContainer = document.getElementById("nowContainer")
 let doneContainer = document.getElementById("doneContainer")
 let cardTemplate = document.getElementById("cardTemplate")
 
-fetchPlannedContent();
+fetchAllContent();
+
+initClickables();
 
 export function contentAdapter(content) {
 
@@ -44,7 +46,7 @@ export function contentAdapter(content) {
         contentEpisode.innerText = "Episode " + contentItem.episode
         contentWebsite.innerText = "Website " + contentItem.websiteName
 
-        contentCard.onclick = function () {
+        contentWebsite.onclick = function () {
             window.open(contentItem.contentLink, "_blank")
         }
 
@@ -59,6 +61,13 @@ export function contentAdapter(content) {
 }
 
 
+
+
+function initClickables() {
+    plannedContainer.onclick = function () { toggleModal(plannedContainer) }
+    nowContainer.onclick = function () { toggleModal(nowContainer) }
+    doneContainer.onclick = function () { toggleModal(doneContainer) }
+}
 
 
 
