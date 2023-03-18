@@ -1,45 +1,72 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-  <title>Dropdown with Checkbox using Bootstrap</title>
-  <!-- Include Bootstrap CSS -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <meta charset="UTF-8">
+  <title>Select Tag with Checkboxes</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
 </head>
+
 <body>
-  <div class="container">
-    <h2>Dropdown with Checkbox using Bootstrap</h2>
-    <div class="dropdown">
-      <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Select Items
-        <span class="caret"></span>
-      </button>
-      <ul class="dropdown-menu">
-        <li><a href="#"><input type="checkbox" value="Item 1"/>Item 1</a></li>
-        <li><a href="#"><input type="checkbox" value="Item 2"/>Item 2</a></li>
-        <li><a href="#"><input type="checkbox" value="Item 3"/>Item 3</a></li>
-        <li><a href="#"><input type="checkbox" value="Item 4"/>Item 4</a></li>
-      </ul>
+
+
+  <div class="container mt-4">
+    <div class="d-flex flex-row">
+
+
+      <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+          data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Select Genras
+        </button>
+        <div class="dropdown-menu px-3" aria-labelledby="dropdownMenuButton">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="option1" value="option1">
+            <label class="form-check-label" for="option1">
+              Option 1
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="option2" value="option2">
+            <label class="form-check-label" for="option2">
+              Option 2
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="option3" value="option3">
+            <label class="form-check-label" for="option3">
+              Option 3
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="option4" value="option4">
+            <label class="form-check-label" for="option4">
+              Option 4
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <div id class="mx-3">
+        <button type="button" class="btn btn-primary mx-1">Primary</button>
+        <button type="button" class="btn btn-primary mx-1">Primary</button>
+
+
+      </div>
+
+
     </div>
+
   </div>
 
-  <!-- Include jQuery and Bootstrap JS -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-  <script>
-    $(document).ready(function() {
-      // Update the button text when checkboxes are checked/unchecked
-      $(".dropdown-menu input[type='checkbox']").change(function() {
-        var checkedItems = [];
-        $(".dropdown-menu input[type='checkbox']:checked").each(function() {
-          checkedItems.push($(this).parent().text());
-        });
-        if (checkedItems.length == 0) {
-          $(".dropdown-toggle").html("Select Items <span class='caret'></span>");
-        } else {
-          $(".dropdown-toggle").html(checkedItems.join(", ") + " <span class='caret'></span>");
-        }
-      });
-    });
-  </script>
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+    crossorigin="anonymous"></script>
 </body>
+
 </html>
