@@ -71,9 +71,3 @@ body::-webkit-scrollbar-thumb {
     background: #51ff00;
     border-radius: 10px;
 }
-
-.dropdown {
-    position: relative;
-    left: 50px;
-    top: 50px;
-  }
