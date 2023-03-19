@@ -7,16 +7,7 @@ let genraButtonTempalate = document.getElementById("genraButtonTempalate")
 
 let btnSubmit = document.getElementById("btnSubmit")
 btnSubmit.onclick = function () {
-
-    const collection = genraButtonsContainer.children;
-
-    let text = "";
-    for (let i = 0; i < collection.length; i++) {
-        text += collection[i].id + "\n";
-    }
-
-    console.log(text);
-
+    getSelectedGenras()
 }
 
 
@@ -66,4 +57,15 @@ function addGenraButton(g) {
 function removeGenraButton(g) {
     document.getElementById("genraButton_" + g).remove();
 
+}
+
+function getSelectedGenras() {
+
+    const collection = genraButtonsContainer.children;
+    let selectGenras = []
+    for (let i = 0; i < collection.length; i++) {
+        selectGenras.push(collection[i].innerText);
+    }
+
+    return selectGenras
 }
