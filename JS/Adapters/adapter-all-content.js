@@ -1,4 +1,5 @@
 import { fetchAllContent as fetchAllContent } from "../Fetches/fetch-all-content.js";
+import { displayGenrasCheckboxes } from "../multi-select.js";
 
 
 
@@ -11,7 +12,9 @@ fetchAllContent();
 
 initClickables();
 
-export function contentAdapter(content) {
+export function contentAdapter(jsonResponse) {
+    let content = jsonResponse.content
+    displayGenrasCheckboxes(jsonResponse.genras)
 
     content.forEach(contentItem => {
         const clone = cardTemplate.content.cloneNode(true)
@@ -45,6 +48,7 @@ export function contentAdapter(content) {
         contentSeasone.innerText = "Season " + contentItem.season
         contentEpisode.innerText = "Episode " + contentItem.episode
         contentWebsite.innerText = "Website " + contentItem.websiteName
+
 
         contentWebsite.onclick = function () {
             window.open(contentItem.contentLink, "_blank")

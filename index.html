@@ -83,6 +83,25 @@
                         <label for="inputImgSrc">Content Image Url</label>
                     </div>
 
+                    <div class="d-flex flex-row mb-3">
+
+                        <div class="dropdown">
+                            <button class="btn btn-success dropdown-toggle p-2" type="button" id="dropdownMenuButton"
+                                data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Select Genras
+                            </button>
+                            <div id="genraCheckboxesContainer" class="dropdown-menu px-3"
+                                aria-labelledby="dropdownMenuButton">
+                            </div>
+                        </div>
+
+
+                        <div id="genraButtonsContainer" class="ps-3 ms-3 d-flex flex-row sgOverflow_x">
+                        </div>
+
+
+                    </div>
+
                     <div class="row mb-3">
                         <div class="col">
                             <div class="form-floating">
@@ -93,12 +112,10 @@
                         <div class="col">
                             <div class="form-floating">
                                 <input id="inputEpisode" type="text" class="form-control" placeholder="Episode 12">
-                                <label for="inputEpisode">Content Episode Url</label>
+                                <label for="inputEpisode">Content Episode</label>
                             </div>
                         </div>
                     </div>
-
-                
 
                     <div class="form-floating mb-3">
                         <textarea id="inputDescription" class="form-control" placeholder="Description"
@@ -139,7 +156,7 @@
     </div>
     <!-- Add Modal -->
 
-
+    <!-- templates -->
     <template id="cardTemplate">
 
         <div id="contentCard" class="col-md-6 card sgContentCard mx-5 bg-dark">
@@ -187,9 +204,28 @@
         </div>
     </template>
 
+
+    <template id="genraCheckboxTemplate">
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="genraCheckBox" value="option1">
+            <label id="genraCheckBoxLabel" class="form-check-label" for="genraCheckBox">
+                Option 1
+            </label>
+        </div>
+    </template>
+
+    <template id="genraButtonTempalate">
+        <button id="genraButton" type="button" class="btn btn-primary mx-1">Primary</button>
+
+    </template>
+    <!-- / templates -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
 
     <script type="module" src="./JS/Adapters/adapter-all-content.js">
+    </script>
+
+
+    <script type="module" src="./JS/multi-select.js">
     </script>
 
 

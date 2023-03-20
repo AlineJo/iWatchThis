@@ -14,9 +14,9 @@ export async function fetchAllContent() {
     }
 
     // extract json from the response
-    const content = await response.json();
+    const jsonResponse = await response.json();
 
-    console.log(JSON.stringify(content));
+    console.log(JSON.stringify(jsonResponse));
 
-    contentAdapter(content)
+    contentAdapter(jsonResponse)
 }

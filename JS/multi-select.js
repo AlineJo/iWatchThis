@@ -5,16 +5,17 @@ let genraButtonsContainer = document.getElementById("genraButtonsContainer")
 let genraButtonTempalate = document.getElementById("genraButtonTempalate")
 
 
-let genras = ["g1", "g2", "g3", "g4", "g5"]
+// let genras = ["g1", "g2", "g3", "g4", "g5", "g6", "g7", "g8", "g9", "g10"]
 
 
-displayGenrasCheckboxes()
 
-function displayGenrasCheckboxes() {
-    console.log("displayGenrasCheckboxes");
+export function displayGenrasCheckboxes(genras) {
 
+    console.log(genras)
+
+    // let genras = getArrayFromString(genrasString)
     genras.forEach(g => {
-        populateCheckboxes(g)
+        populateCheckboxes(g.genra)
     })
 
 
@@ -63,3 +64,9 @@ function getSelectedGenras() {
 
     return selectGenras
 }
+
+
+
+// function getArrayFromString(str) {
+//     return str.split(',');
+// }
