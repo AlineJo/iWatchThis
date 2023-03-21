@@ -54,7 +54,7 @@ function removeGenraButton(g) {
 
 }
 
-function getSelectedGenras() {
+export function getSelectedGenras() {
 
     const collection = genraButtonsContainer.children;
     let selectGenras = []

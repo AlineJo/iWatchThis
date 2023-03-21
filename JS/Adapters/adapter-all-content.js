@@ -44,7 +44,7 @@ export function contentAdapter(jsonResponse) {
 
         contentImg.src = contentItem.imgSrc
         contentTitle.innerText = contentItem.title
-        contentDescription.innerText = contentItem.description
+        contentDescription.innerText = contentItem.description.substring(0, 100)
         contentSeasone.innerText = "Season " + contentItem.season
         contentEpisode.innerText = "Episode " + contentItem.episode
         contentWebsite.innerText = "Website " + contentItem.websiteName

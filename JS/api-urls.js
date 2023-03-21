@@ -19,3 +19,4 @@ export function HTTP_METHOD_POST_NO_CACHE(jsonRequestObj) {
 // ******** userAPI URLS ***********//
 export const API_URL_GET_ALL_CONTENT = "http://localhost/expprojects/iWatchThis/php/get-content-all.php"
 export const API_URL_GET_PLANNED_CONTENT = "http://localhost/expprojects/iWatchThis/php/get-content-planned.php"
+export const API_URL_INSERT_CONTENT = "http://localhost/expprojects/iWatchThis/php/insert-content.php"
