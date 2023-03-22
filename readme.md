@@ -39,6 +39,7 @@ Views Queries
 
 `CREATE OR REPLACE VIEW ViewContentAll AS SELECT C.* , 
 group_concat(distinct CGM.genra separator ', ') AS genra,
+CS.id as seasonId,
 CS.season,
 CS.episode
 FROM
@@ -55,6 +56,7 @@ GROUP BY C.id;`
 
 `CREATE OR REPLACE VIEW ViewContentPlanned AS SELECT C.* , 
 group_concat(distinct CGM.genra separator ', ') AS genra,
+CS.id as seasonId,
 CS.season,
 CS.episode
 FROM
@@ -73,6 +75,7 @@ GROUP BY C.id;`
 
 `CREATE OR REPLACE VIEW ViewContentNow AS SELECT C.* , 
 group_concat(distinct CGM.genra separator ', ') AS genra,
+CS.id as seasonId,
 CS.season,
 CS.episode
 FROM
@@ -90,6 +93,7 @@ GROUP BY C.id;`
 
 `CREATE OR REPLACE VIEW ViewContentDone AS SELECT C.* , 
 group_concat(distinct CGM.genra separator ', ') AS genra,
+CS.id as seasonId,
 CS.season,
 CS.episode
 FROM
