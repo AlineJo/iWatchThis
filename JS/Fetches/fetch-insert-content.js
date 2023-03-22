@@ -32,7 +32,16 @@ function validate() {
        */
 
     let jsonRequestBody = {}
-    jsonRequestBody.status = "planned"
+
+    let inputStatus = document.getElementById("inputStatus")
+    if (inputStatus.value == "-1") {
+        inputStatus.classList.add("is-invalid")
+        return;
+    }
+    else {
+        inputStatus.classList.remove("is-invalid")
+        jsonRequestBody.status = inputStatus.value
+    }
 
     let inputTitle = document.getElementById("inputTitle")
     if (inputTitle.value == "") {

@@ -46,7 +46,7 @@ export function addGenraButton(g) {
 
 }
 
-function removeGenraButton(g) {
+export function removeGenraButton(g) {
     document.getElementById("genraButton_" + g).remove();
 
 }

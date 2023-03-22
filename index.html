@@ -21,21 +21,21 @@
 
     <div class="container-fluid text-center px-5 bg-dark">
 
-        <button class="btn btn-outline-light mt-5">
-            <h3 class="display-3" data-bs-toggle="modal" data-bs-target="#addModal">Planned</h3>
+        <button id="btnPlanned" class="btn btn-outline-light mt-5">
+            <h3  class="display-3" data-bs-toggle="modal" data-bs-target="#addModal">Planned</h3>
         </button>
         <div id="plannedContainer" class="d-flex d-flex-row sgPlannedContainer sgOverflow_x py-4 bg-dark">
             <!-- cardTemplate Lives Here!!! -->
         </div>
 
-        <button class="btn btn-outline-light mt-5">
-            <h3 class="display-3" data-bs-toggle="modal" data-bs-target="#addModal">Watching Now</h3>
+        <button id="btnNow" class="btn btn-outline-light mt-5">
+            <h3  class="display-3" data-bs-toggle="modal" data-bs-target="#addModal">Watching Now</h3>
         </button>
         <div id="nowContainer" class="d-flex d-flex-row sgPlannedContainer sgOverflow_x py-4 bg-dark">
             <!-- cardTemplate Lives Here!!! -->
         </div>
 
-        <button class="btn btn-outline-light mt-5">
+        <button id="btnPlanned" class="btn btn-outline-light mt-5">
             <h3 class="display-3" data-bs-toggle="modal" data-bs-target="#addModal">Done</h3>
         </button>
         <div id="doneContainer" class="d-flex d-flex-row sgPlannedContainer sgOverflow_x py-4 bg-dark">
@@ -67,6 +67,18 @@
 "episode" : 20 , 
 "ganrasArray" :["Action", "School", "Fantasy"]
 } -->
+
+                    <div class="mb-3">
+                        <select id="inputStatus" class="form-select form-select-lg" aria-label=".form-select-lg example">
+                            <option value="-1" selected>Select Status</option>
+                            <option value="planned">Planned</option>
+                            <option value="now">Now</option>
+                            <option value="done">Done</option>
+                        </select>
+                        <div id="inputStatusValidation" class="invalid-feedback">
+                            Select Status.
+                        </div>
+                    </div>
 
                     <div class="form-floating mb-3">
                         <input id="inputTitle" type="text" class="form-control" placeholder="Drifters">
@@ -136,12 +148,14 @@
                     </div>
 
                     <div class="mb-3">
+                        <label for="inputDescription">Description</label>
                         <textarea id="inputDescription" class="form-control sgHight_100px"
                             placeholder="Description"></textarea>
-                        <label for="inputDescription">Description</label>
                         <div id="inputDescriptionValidation" class="invalid-feedback">
-                            Enter Content Url.
+                            Enter Description.
                         </div>
+
+
                     </div>
 
 

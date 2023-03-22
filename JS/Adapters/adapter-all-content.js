@@ -1,6 +1,6 @@
 import { fetchAllContent as fetchAllContent } from "../Fetches/fetch-all-content.js";
 import { toggleModal } from "../libs.js";
-import { addGenraButton, displayGenrasCheckboxes } from "../multi-select.js";
+import { addGenraButton, displayGenrasCheckboxes, removeGenraButton } from "../multi-select.js";
 
 
 
@@ -72,21 +72,23 @@ export function contentAdapter(jsonResponse) {
     });
 }
 
-
-
-
 function initClickables() {
-    plannedContainer.onclick = function () {
-        // toggleModal(plannedContainer)
+
+
+    let btnPlanned = document.getElementById("btnPlanned")
+    let btnNow = document.getElementById("btnNow")
+    let btnDone = document.getElementById("btnDone")
+
+    btnPlanned.onclick = function () {
+        clearModalData()
     }
-    nowContainer.onclick = function () {
-        // toggleModal(nowContainer)
+    btnNow.onclick = function () {
+        clearModalData()
     }
-    doneContainer.onclick = function () {
-        // toggleModal(doneContainer)
+    btnDone.onclick = function () {
+        clearModalData()
     }
 }
-
 
 function populateUploadModalData(contentItem) {
 
@@ -126,5 +128,44 @@ function populateUploadModalData(contentItem) {
 
 }
 
+
+
+
+function clearModalData() {
+
+    let modalElement = document.getElementById("addModal")
+    let btnAdd = document.getElementById("btnAdd")
+    modalElement.dataset.action = "insert"
+    btnAdd.innerText = "Add"
+
+
+    let inputTitle = document.getElementById("inputTitle")
+    let inputWebsite = document.getElementById("inputWebsite")
+    let inputImgSrc = document.getElementById("inputImgSrc")
+    let inputSeason = document.getElementById("inputSeason")
+    let inputEpisode = document.getElementById("inputEpisode")
+    let inputDescription = document.getElementById("inputDescription")
+
+    inputTitle.value = ""
+    inputWebsite.value = ""
+    inputImgSrc.value = ""
+    inputSeason.value = ""
+    inputEpisode.value = ""
+    inputDescription.value = ""
+
+
+    let genraCheckboxesContainer = document.getElementById("genraCheckboxesContainer")
+    const collection = genraCheckboxesContainer.children;
+    for (let i = 0; i < collection.length; i++) {
+        let genra = collection[i].innerText.trim()
+        if (document.getElementById(genra).checked) {
+            document.getElementById(genra).checked = false
+            removeGenraButton(genra)
+        }
+    }
+
+    toggleModal()
+
+}
 
 

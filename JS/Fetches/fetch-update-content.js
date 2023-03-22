@@ -23,7 +23,16 @@ export function validateUpdate() {
     let jsonRequestBody = {}
     jsonRequestBody.contentId = modalElement.dataset.id
     jsonRequestBody.seasonId = modalElement.dataset.seasonId
-    jsonRequestBody.status = "planned"
+
+    let inputStatus = document.getElementById("inputStatus")
+    if (inputStatus.value == "-1") {
+        inputStatus.classList.add("is-invalid")
+        return;
+    }
+    else {
+        inputStatus.classList.remove("is-invalid")
+        jsonRequestBody.status = inputStatus.value
+    }
 
     let inputTitle = document.getElementById("inputTitle")
     if (inputTitle.value == "") {
@@ -103,8 +112,6 @@ export function validateUpdate() {
 
 async function fetchUpdateContent(jsonRequestBody) {
 
-    console.log("::..:: "+JSON.stringify(jsonRequestBody));
-
     // fetch response using API URL and HTTP method
     const response = await fetch(API_URL_UPDATE_CONTENT, HTTP_METHOD_POST_NO_CACHE(jsonRequestBody));
 
@@ -116,7 +123,9 @@ async function fetchUpdateContent(jsonRequestBody) {
     // extract json from the response
     const jsonResponse = await response.json();
 
-    console.log(JSON.stringify(jsonResponse));
+    toggleModal()
+
+    alert(JSON.stringify(jsonResponse))
 
 }
 
