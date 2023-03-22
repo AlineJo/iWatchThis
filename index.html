@@ -46,7 +46,7 @@
 
     <!-- Add Modal -->
     <div class="modal fade" id="addModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-        aria-labelledby="addModalLabel" aria-hidden="true">
+        aria-labelledby="addModalLabel" aria-hidden="true" data-action="insert">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
@@ -135,10 +135,10 @@
                         </div>
                     </div>
 
-                    <div class="form-floating mb-3">
-                        <textarea id="inputDescription" class="form-control" placeholder="Description"
-                            style="height: 100px"></textarea>
-                        <label for="floatingTextarea2">Description</label>
+                    <div class="mb-3">
+                        <textarea id="inputDescription" class="form-control sgHight_100px"
+                            placeholder="Description"></textarea>
+                        <label for="inputDescription">Description</label>
                         <div id="inputDescriptionValidation" class="invalid-feedback">
                             Enter Content Url.
                         </div>
@@ -153,29 +153,9 @@
             </div>
         </div>
     </div>
-    <!-- Edit Modal -->
-
-
-    <!-- Edit Modal -->
-    <div class="modal fade" id="editModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-        aria-labelledby="editModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="editModalLabel">Modal title</h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    ...
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Understood</button>
-                </div>
-            </div>
-        </div>
-    </div>
     <!-- Add Modal -->
+
+
 
     <!-- templates -->
     <template id="cardTemplate">
@@ -194,10 +174,10 @@
 
 
                         <h5 class="card-title text-white text-start d-flex" data-bs-toggle="modal"
-                            data-bs-target="#editModal">
+                            data-bs-target="#addModal">
                             <p id="contentTitle" class="flex-grow-1">Drifters</p>
 
-                            <button class="btn btn-lg btn-outline-light">
+                            <button id="btnContentUpdate" class="btn btn-lg btn-outline-light">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                                     class="bi bi-pencil-fill" viewBox="0 0 16 16">
                                     <path
@@ -236,7 +216,7 @@
     </template>
 
     <template id="genraButtonTempalate">
-        <button id="genraButton" type="button" class="btn btn-primary mx-1" style="min-width: 125px;">Primary</button>
+        <button id="genraButton" type="button" class="btn btn-primary sgGenraButton mx-1">Primary</button>
 
     </template>
     <!-- / templates -->
@@ -245,12 +225,14 @@
     <script type="module" src="./JS/Adapters/adapter-all-content.js">
     </script>
 
-
     <script type="module" src="./JS/multi-select.js">
     </script>
 
-
     <script type="module" src="./JS/Fetches/fetch-insert-content.js">
+    </script>
+
+
+    <script type="module" src="./JS/Fetches/fetch-update-content.js">
     </script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"

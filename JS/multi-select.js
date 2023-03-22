@@ -5,10 +5,6 @@ let genraButtonsContainer = document.getElementById("genraButtonsContainer")
 let genraButtonTempalate = document.getElementById("genraButtonTempalate")
 
 
-// let genras = ["g1", "g2", "g3", "g4", "g5", "g6", "g7", "g8", "g9", "g10"]
-
-
-
 export function displayGenrasCheckboxes(genras) {
 
     console.log(genras)
@@ -36,10 +32,11 @@ function populateCheckboxes(g) {
             removeGenraButton(g)
         }
     })
+    genraCheckBox.id = g
     genraCheckboxesContainer.append(clone)
 }
 
-function addGenraButton(g) {
+export function addGenraButton(g) {
     const clone = genraButtonTempalate.content.cloneNode(true)
     let genraButton = clone.getElementById("genraButton")
 
@@ -64,9 +61,3 @@ export function getSelectedGenras() {
 
     return selectGenras
 }
-
-
-
-// function getArrayFromString(str) {
-//     return str.split(',');
-// }

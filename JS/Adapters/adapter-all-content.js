@@ -1,5 +1,6 @@
 import { fetchAllContent as fetchAllContent } from "../Fetches/fetch-all-content.js";
-import { displayGenrasCheckboxes } from "../multi-select.js";
+import { toggleModal } from "../libs.js";
+import { addGenraButton, displayGenrasCheckboxes } from "../multi-select.js";
 
 
 
@@ -26,6 +27,8 @@ export function contentAdapter(jsonResponse) {
         let contentSeasone = clone.getElementById("contentSeason")
         let contentEpisode = clone.getElementById("contentEpisode")
         let contentWebsite = clone.getElementById("contentWebsite")
+        let btnContentUpdate = clone.getElementById("btnContentUpdate")
+
 
         /*
        [{
@@ -54,6 +57,11 @@ export function contentAdapter(jsonResponse) {
             window.open(contentItem.contentLink, "_blank")
         }
 
+        btnContentUpdate.onclick = function () {
+            toggleModal()
+            populateUploadModalData(contentItem)
+        }
+
         switch (contentItem.status) {
             case "planned": { plannedContainer.append(clone); break; }
             case "now": { nowContainer.append(clone); break; }
@@ -68,9 +76,54 @@ export function contentAdapter(jsonResponse) {
 
 
 function initClickables() {
-    plannedContainer.onclick = function () { toggleModal(plannedContainer) }
-    nowContainer.onclick = function () { toggleModal(nowContainer) }
-    doneContainer.onclick = function () { toggleModal(doneContainer) }
+    plannedContainer.onclick = function () {
+        // toggleModal(plannedContainer)
+    }
+    nowContainer.onclick = function () {
+        // toggleModal(nowContainer)
+    }
+    doneContainer.onclick = function () {
+        // toggleModal(doneContainer)
+    }
+}
+
+
+function populateUploadModalData(contentItem) {
+
+    let modalElement = document.getElementById("addModal")
+    let btnAdd = document.getElementById("btnAdd")
+    modalElement.dataset.id = contentItem.id
+    modalElement.dataset.seasonId = contentItem.seasonId
+    modalElement.dataset.action = "update"
+    btnAdd.innerText = "Update"
+
+
+    let inputTitle = document.getElementById("inputTitle")
+    let inputWebsite = document.getElementById("inputWebsite")
+    let inputImgSrc = document.getElementById("inputImgSrc")
+    let inputSeason = document.getElementById("inputSeason")
+    let inputEpisode = document.getElementById("inputEpisode")
+    let inputDescription = document.getElementById("inputDescription")
+
+    inputTitle.value = contentItem.title
+    inputWebsite.value = contentItem.contentLink
+    inputImgSrc.value = contentItem.imgSrc
+    inputSeason.value = contentItem.season
+    inputEpisode.value = contentItem.episode
+    inputDescription.value = contentItem.description
+
+
+    let genraCheckboxesContainer = document.getElementById("genraCheckboxesContainer")
+    const collection = genraCheckboxesContainer.children;
+    for (let i = 0; i < collection.length; i++) {
+        let genra = collection[i].innerText.trim()
+        if (contentItem.genra.includes(genra)) {
+            document.getElementById(genra).checked = true
+            addGenraButton(genra)
+        }
+    }
+
+
 }
 
 

@@ -35,6 +35,13 @@ body {
 
 }
 
+.sgHight_100px {
+    height: 100px
+}
+
+.sgGenraButton {
+    min-width: 125px;
+}
 
 .sgMarginTop_32 {
     margin-top: 32px;

@@ -1,24 +1,13 @@
-import { API_URL_INSERT_CONTENT, HTTP_METHOD_POST_NO_CACHE } from "../api-urls.js";
+import { API_URL_UPDATE_CONTENT, HTTP_METHOD_POST_NO_CACHE } from "../api-urls.js";
 import { getSelectedGenras } from "../multi-select.js";
-import { toggleModal } from "../libs.js"
-import { validateUpdate } from "./fetch-update-content.js";
 
-let btnAdd = document.getElementById("btnAdd")
-btnAdd.onclick = function () {
+
+
+
+export function validateUpdate() {
+
     let modalElement = document.getElementById("addModal")
-    let action = modalElement.dataset.action
 
-    if (action == "insert") {
-        validate()
-    }
-    else {
-        validateUpdate()
-    }
-
-
-}
-
-function validate() {
     /*
    "title" : "post man test399" ,              
    "website"  : "postman.com" , 
@@ -32,6 +21,8 @@ function validate() {
        */
 
     let jsonRequestBody = {}
+    jsonRequestBody.contentId = modalElement.dataset.id
+    jsonRequestBody.seasonId = modalElement.dataset.seasonId
     jsonRequestBody.status = "planned"
 
     let inputTitle = document.getElementById("inputTitle")
@@ -106,14 +97,16 @@ function validate() {
         jsonRequestBody.description = inputDescription.value
     }
 
-    fetchInsertContent(jsonRequestBody)
+    fetchUpdateContent(jsonRequestBody)
 }
 
 
-async function fetchInsertContent(jsonRequestBody) {
+async function fetchUpdateContent(jsonRequestBody) {
+
+    console.log("::..:: "+JSON.stringify(jsonRequestBody));
 
     // fetch response using API URL and HTTP method
-    const response = await fetch(API_URL_INSERT_CONTENT, HTTP_METHOD_POST_NO_CACHE(jsonRequestBody));
+    const response = await fetch(API_URL_UPDATE_CONTENT, HTTP_METHOD_POST_NO_CACHE(jsonRequestBody));
 
     // if error display error massege
     if (!response.ok) {
@@ -123,10 +116,7 @@ async function fetchInsertContent(jsonRequestBody) {
     // extract json from the response
     const jsonResponse = await response.json();
 
-
-    toggleModal()
-
-    alert(JSON.stringify(jsonResponse))
+    console.log(JSON.stringify(jsonResponse));
 
 }
 
@@ -136,3 +126,4 @@ function getDomainFromUrl(contentUrl) {
     domain = domain.hostname.replace('www.', '');//remove www.
     return domain
 }
+
