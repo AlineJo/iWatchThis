@@ -7,14 +7,9 @@ let genraButtonTempalate = document.getElementById("genraButtonTempalate")
 
 export function displayGenrasCheckboxes(genras) {
 
-    console.log(genras)
-
-    // let genras = getArrayFromString(genrasString)
     genras.forEach(g => {
         populateCheckboxes(g.genra)
     })
-
-
 }
 
 function populateCheckboxes(g) {

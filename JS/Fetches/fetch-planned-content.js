@@ -15,7 +15,7 @@ export async function fetchPlannedContent() {
     // extract json from the response
     const content = await response.json();
 
-    console.log(JSON.stringify(content));
+    // console.log(JSON.stringify(content));
 
     contentAdapter(content)
 }

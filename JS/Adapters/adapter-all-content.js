@@ -129,8 +129,6 @@ function populateUploadModalData(contentItem) {
 }
 
 
-
-
 function clearModalData() {
 
     let modalElement = document.getElementById("addModal")

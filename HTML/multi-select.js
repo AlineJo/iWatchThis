@@ -11,8 +11,6 @@ let genras = ["g1", "g2", "g3", "g4", "g5"]
 displayGenrasCheckboxes()
 
 function displayGenrasCheckboxes() {
-    console.log("displayGenrasCheckboxes");
-
     genras.forEach(g => {
         populateCheckboxes(g)
     })
