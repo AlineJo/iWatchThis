@@ -93,8 +93,8 @@ function populateUploadModalData(contentItem) {
 
     let modalElement = document.getElementById("addModal")
     let btnAdd = document.getElementById("btnAdd")
-    modalElement.dataset.id = contentItem.id
-    modalElement.dataset.seasonId = contentItem.seasonId
+    modalElement.dataset.id = parseInt(contentItem.id)
+    modalElement.dataset.seasonId = parseInt(contentItem.seasonId)
     modalElement.dataset.action = "update"
     btnAdd.innerText = "Update"
 

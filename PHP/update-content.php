@@ -9,15 +9,18 @@ function initUpdateContent()
 {
 
     $contentId = updateContent();
-    $seasonId = updateSeason($contentId);
-    insertGenra($contentId);
+    if ($contentId != -1) {
+        $seasonId = updateSeason($contentId);
+        insertGenra($contentId);
 
-    // create jsonResponseObj
-    $jsonResponse = new stdClass();
-    $jsonResponse->contentId = $contentId;
-    $jsonResponse->seasonId = $seasonId;
+        // create jsonResponseObj
+        $jsonResponse = new stdClass();
+        $jsonResponse->contentId = $contentId;
+        $jsonResponse->seasonId = $seasonId;
 
-    echo json_encode($jsonResponse);
+        echo json_encode($jsonResponse);
+    }
+
 
 }
 
@@ -30,16 +33,18 @@ function updateContent()
 
     //content vars
     $contentId = $data[$KEY_contentId];
-    $title = $data[$KEY_title];
+    $title = getCleanString($data[$KEY_title]);
     $websiteName = $data[$KEY_website];
     $status = $data[$KEY_status];
-    $description = $data[$KEY_description];
+    $description = getCleanString($data[$KEY_description]);
     $contentLink = $data[$KEY_contentLink];
     $imgSrc = $data[$KEY_imgSrc];
 
 
-    //insert query
-    $query = "UPDATE `Content` SET 
+    try {
+
+        //insert query
+        $query = "UPDATE `Content` SET 
     `title`='$title',
     `websiteName`='$websiteName',
     `status`='$status',
@@ -48,16 +53,27 @@ function updateContent()
     `imgSrc`='$imgSrc' 
      WHERE `id` = $contentId";
 
+        //execute query
+        $queryResult = $cnn->prepare($query);
+        $queryResult->execute();
 
-    //execute query
-    $queryResult = $cnn->prepare($query);
-    $queryResult->execute();
+        //get the last inserted id
+        //$contentId = $cnn->lastInsertId();
 
-    //get the last inserted id
-    //$contentId = $cnn->lastInsertId();
+        return $contentId;
+    } catch (PDOException $ex) {
+
+        $errorMsg = $ex->getMessage();
+        // create jsonResponseObj
+        $jsonResponse = new stdClass();
+        $jsonResponse->errorMsg = $errorMsg;
+        $jsonResponse->contentId = -1;
+        echo json_encode($jsonResponse);
 
 
-    return $contentId;
+        return -1;
+    }
+
 }
 
 function updateSeason($contentId)
@@ -97,7 +113,7 @@ function updateSeason($contentId)
 function insertGenra($contentId)
 {
     deleteOldGenras();
-    
+
     include('./constents.php');
     global $data;
     global $cnn;
@@ -143,5 +159,10 @@ function deleteOldGenras()
     $queryResult->execute();
 }
 
+function getCleanString($string)
+{
+    $string = str_replace("'", "\'", $string);
+    return $string;
+}
 
 ?>

@@ -22,8 +22,8 @@ export function validateUpdate() {
        */
 
     let jsonRequestBody = {}
-    jsonRequestBody.contentId = modalElement.dataset.id
-    jsonRequestBody.seasonId = modalElement.dataset.seasonId
+    jsonRequestBody.contentId = parseInt(modalElement.dataset.id)
+    jsonRequestBody.seasonId = parseInt(modalElement.dataset.seasonId)
 
     let inputStatus = document.getElementById("inputStatus")
     if (inputStatus.value == "-1") {
@@ -112,6 +112,8 @@ export function validateUpdate() {
 
 
 async function fetchUpdateContent(jsonRequestBody) {
+
+    console.log(JSON.stringify(jsonRequestBody));
 
     // fetch response using API URL and HTTP method
     const response = await fetch(API_URL_UPDATE_CONTENT, HTTP_METHOD_POST_NO_CACHE(jsonRequestBody));

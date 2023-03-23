@@ -28,10 +28,10 @@ function insertContent()
     global $cnn;
 
     //content vars
-    $title = $data[$KEY_title];
+    $title =  getCleanString($data[$KEY_title]);
     $websiteName = $data[$KEY_website];
     $status = $data[$KEY_status];
-    $description = $data[$KEY_description];
+    $description =  getCleanString($data[$KEY_description]);
     $contentLink = $data[$KEY_contentLink];
     $imgSrc = $data[$KEY_imgSrc];
 
@@ -114,5 +114,10 @@ function insertGenra($contentId)
     }
 }
 
+function getCleanString($string)
+{
+    $string = str_replace("'", "\'", $string);
+    return $string;
+}
 
 ?>
