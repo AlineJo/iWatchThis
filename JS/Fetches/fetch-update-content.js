@@ -1,5 +1,6 @@
 import { API_URL_UPDATE_CONTENT, HTTP_METHOD_POST_NO_CACHE } from "../api-urls.js";
 import { getSelectedGenras } from "../multi-select.js";
+import { toggleModal } from "../libs.js"
 
 
 
@@ -125,8 +126,7 @@ async function fetchUpdateContent(jsonRequestBody) {
 
     toggleModal()
 
-    alert(JSON.stringify(jsonResponse))
-
+    location.reload();
 }
 
 

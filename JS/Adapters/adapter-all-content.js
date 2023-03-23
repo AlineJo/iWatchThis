@@ -74,19 +74,18 @@ export function contentAdapter(jsonResponse) {
 
 function initClickables() {
 
-
     let btnPlanned = document.getElementById("btnPlanned")
     let btnNow = document.getElementById("btnNow")
     let btnDone = document.getElementById("btnDone")
 
     btnPlanned.onclick = function () {
-        clearModalData()
+        clearModalData("planned")
     }
     btnNow.onclick = function () {
-        clearModalData()
+        clearModalData("now")
     }
     btnDone.onclick = function () {
-        clearModalData()
+        clearModalData("done")
     }
 }
 
@@ -98,6 +97,10 @@ function populateUploadModalData(contentItem) {
     modalElement.dataset.seasonId = contentItem.seasonId
     modalElement.dataset.action = "update"
     btnAdd.innerText = "Update"
+
+
+    let inputStatus = document.getElementById("inputStatus")
+    inputStatus.value = contentItem.status
 
 
     let inputTitle = document.getElementById("inputTitle")
@@ -129,12 +132,15 @@ function populateUploadModalData(contentItem) {
 }
 
 
-function clearModalData() {
+function clearModalData(status) {
 
     let modalElement = document.getElementById("addModal")
     let btnAdd = document.getElementById("btnAdd")
     modalElement.dataset.action = "insert"
     btnAdd.innerText = "Add"
+
+    let inputStatus = document.getElementById("inputStatus")
+    inputStatus.value = status
 
 
     let inputTitle = document.getElementById("inputTitle")

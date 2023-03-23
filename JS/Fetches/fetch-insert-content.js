@@ -135,7 +135,7 @@ async function fetchInsertContent(jsonRequestBody) {
 
     toggleModal()
 
-    alert(JSON.stringify(jsonResponse))
+   location.reload();
 
 }
 
