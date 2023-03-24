@@ -98,11 +98,10 @@ function populateUploadModalData(contentItem) {
     modalElement.dataset.action = "update"
     btnAdd.innerText = "Update"
 
-
     let inputStatus = document.getElementById("inputStatus")
-    inputStatus.value = contentItem.status
-
-
+    let inputRank = document.getElementById("inputRank")
+   
+    
     let inputTitle = document.getElementById("inputTitle")
     let inputWebsite = document.getElementById("inputWebsite")
     let inputImgSrc = document.getElementById("inputImgSrc")
@@ -110,6 +109,8 @@ function populateUploadModalData(contentItem) {
     let inputEpisode = document.getElementById("inputEpisode")
     let inputDescription = document.getElementById("inputDescription")
 
+    inputStatus.value = contentItem.status
+    inputRank.value = contentItem.rank
     inputTitle.value = contentItem.title
     inputWebsite.value = contentItem.contentLink
     inputImgSrc.value = contentItem.imgSrc

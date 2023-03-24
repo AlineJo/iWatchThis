@@ -34,6 +34,16 @@ export function validateUpdate() {
         inputStatus.classList.remove("is-invalid")
         jsonRequestBody.status = inputStatus.value
     }
+    
+    let inputRank = document.getElementById("inputRank")
+    if (inputRank.value == "") {
+        inputRank.classList.add("is-invalid")
+        return;
+    }
+    else {
+        inputRank.classList.remove("is-invalid")
+        jsonRequestBody.rank = inputRank.value
+    }
 
     let inputTitle = document.getElementById("inputTitle")
     if (inputTitle.value == "") {

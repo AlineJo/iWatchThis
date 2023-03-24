@@ -28,10 +28,11 @@ function insertContent()
     global $cnn;
 
     //content vars
-    $title =  getCleanString($data[$KEY_title]);
+    $title = getCleanString($data[$KEY_title]);
     $websiteName = $data[$KEY_website];
     $status = $data[$KEY_status];
-    $description =  getCleanString($data[$KEY_description]);
+    $rank = $data[$KEY_rank];
+    $description = getCleanString($data[$KEY_description]);
     $contentLink = $data[$KEY_contentLink];
     $imgSrc = $data[$KEY_imgSrc];
 
@@ -39,9 +40,9 @@ function insertContent()
 
     //insert query
     $query = "INSERT INTO `Content` 
- (`title`, `websiteName`, `status`, `description`, `contentLink`, `imgSrc`)
+ (`title`, `websiteName`, `status`, `rank`, `description`, `contentLink`, `imgSrc`)
  VALUES 
- ('$title','$websiteName','$status','$description','$contentLink','$imgSrc')";
+ ('$title','$websiteName','$status', $rank , '$description','$contentLink','$imgSrc')";
 
     //execute query
     $queryResult = $cnn->prepare($query);

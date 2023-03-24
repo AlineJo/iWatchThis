@@ -6,6 +6,7 @@ $KEY_contentSeasonId = "seasonId";
 $KEY_title = "title";
 $KEY_website = "website";
 $KEY_status = "status";
+$KEY_rank = "rank";
 $KEY_description = "description";
 $KEY_contentLink = "contentLink";
 $KEY_imgSrc = "imgSrc";

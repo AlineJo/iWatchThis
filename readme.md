@@ -50,7 +50,8 @@ ON CGM.contentId = C.id
 JOIN
 ContentSeason AS CS
 ON C.id = CS.contentId
-GROUP BY C.id;`
+GROUP BY C.id
+ORDER BY C.rank DESC;`
 
 >2. **ViewContentPlanned**
 
@@ -68,7 +69,8 @@ JOIN
 ContentSeason AS CS
 ON C.id = CS.contentId
 where C.status = 'planned'
-GROUP BY C.id;`
+GROUP BY C.id
+ORDER BY C.rank DESC;`
 
 
 >3. **ViewContentNow**
@@ -87,7 +89,8 @@ JOIN
 ContentSeason AS CS
 ON C.id = CS.contentId
 where C.status = 'now'
-GROUP BY C.id;`
+GROUP BY C.id
+ORDER BY C.rank DESC;`
 
 >4. **ViewContentDone**
 
@@ -105,4 +108,5 @@ JOIN
 ContentSeason AS CS
 ON C.id = CS.contentId
 where C.status = 'done'
-GROUP BY C.id;`
+GROUP BY C.id
+ORDER BY C.rank DESC;`

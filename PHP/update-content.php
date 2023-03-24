@@ -36,6 +36,7 @@ function updateContent()
     $title = getCleanString($data[$KEY_title]);
     $websiteName = $data[$KEY_website];
     $status = $data[$KEY_status];
+    $rank = $data[$KEY_rank];
     $description = getCleanString($data[$KEY_description]);
     $contentLink = $data[$KEY_contentLink];
     $imgSrc = $data[$KEY_imgSrc];
@@ -48,6 +49,7 @@ function updateContent()
     `title`='$title',
     `websiteName`='$websiteName',
     `status`='$status',
+    `rank`=$rank,
     `description`='$description',
     `contentLink`='$contentLink',
     `imgSrc`='$imgSrc' 

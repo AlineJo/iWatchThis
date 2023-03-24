@@ -21,6 +21,7 @@ body {
 }
 
 .sgContentCard {
+    height: 255px;
     max-width: 540px;
     transition: transform .35s;
     -moz-transition: all .35s ease;
@@ -30,7 +31,7 @@ body {
 }
 
 .sgContentCard:hover {
-    transform: scale(1.05);
+    transform: scale(1.15);
     z-index: 10;
 
 }

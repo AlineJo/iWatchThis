@@ -22,14 +22,14 @@
     <div class="container-fluid text-center px-5 bg-dark">
 
         <button id="btnPlanned" class="btn btn-outline-light mt-5">
-            <h3  class="display-3" data-bs-toggle="modal" data-bs-target="#addModal">Planned</h3>
+            <h3 class="display-3" data-bs-toggle="modal" data-bs-target="#addModal">Planned</h3>
         </button>
         <div id="plannedContainer" class="d-flex d-flex-row sgPlannedContainer sgOverflow_x py-4 bg-dark">
             <!-- cardTemplate Lives Here!!! -->
         </div>
 
         <button id="btnNow" class="btn btn-outline-light mt-5">
-            <h3  class="display-3" data-bs-toggle="modal" data-bs-target="#addModal">Watching Now</h3>
+            <h3 class="display-3" data-bs-toggle="modal" data-bs-target="#addModal">Watching Now</h3>
         </button>
         <div id="nowContainer" class="d-flex d-flex-row sgPlannedContainer sgOverflow_x py-4 bg-dark">
             <!-- cardTemplate Lives Here!!! -->
@@ -57,7 +57,8 @@
 
                     <!-- 
 {
-"title" : "post man test399" ,              
+"title" : "post man test399" ,  
+"rank"  : 8,            
 "website"  : "postman.com" , 
 "status" : "planed" , 
 "description" : "some deec" , 
@@ -68,16 +69,30 @@
 "ganrasArray" :["Action", "School", "Fantasy"]
 } -->
 
-                    <div class="mb-3">
-                        <select id="inputStatus" class="form-select form-select-lg" aria-label=".form-select-lg example">
-                            <option value="-1" selected>Select Status</option>
-                            <option value="planned">Planned</option>
-                            <option value="now">Now</option>
-                            <option value="done">Done</option>
-                        </select>
-                        <div id="inputStatusValidation" class="invalid-feedback">
-                            Select Status.
+                    <div class="row mb-3" > 
+                        <div class="col">
+                            <select id="inputStatus" class="form-select form-select-lg" style="height:58;"
+                                aria-label=".form-select-lg example">
+                                <option value="-1" selected>Select Status</option>
+                                <option value="planned">Planned</option>
+                                <option value="now">Now</option>
+                                <option value="done">Done</option>
+                            </select>
+                            <div id="inputStatusValidation" class="invalid-feedback">
+                                Select Status.
+                            </div>
                         </div>
+
+                        <div class="col">
+                            <div class="form-floating">
+                                <input id="inputRank" type="text" class="form-control" placeholder="Rank">
+                                <label for="inputRank">Content Rank</label>
+                                <div id="inputRankValidation" class="invalid-feedback">
+                                    Enter Content Rank.
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
 
                     <div class="form-floating mb-3">
@@ -178,7 +193,7 @@
 
             <div class="row g-0">
                 <div class="col-md-4">
-                    <img id="contentImg" class="img-fluid rounded-start"
+                    <img id="contentImg" class="img-fluid rounded-start" style="height: 255px;"
                         src="https://m.media-amazon.com/images/M/MV5BYmQ2YmU0YzEtYWE5OS00MjU4LThmZDQtZGNhNTE5Y2MwODg1XkEyXkFqcGdeQXVyMTUwMjI0MTI@._V1_.jpg"
                         alt="...">
                 </div>
@@ -201,7 +216,8 @@
 
                         </h5>
 
-                        <p id="contentDescription" class="card-text sgMarginTop_32 text-white text-start" style="height: 72px;">Various
+                        <p id="contentDescription" class="card-text sgMarginTop_32 text-white text-start"
+                            style="height: 72px;">Various
                             historical fighters are summoned
                             from across time to
                             wage war on each other, with the fate of the world in the balance.</p>
