@@ -36,6 +36,18 @@ body {
 
 }
 
+.sgSelect {
+    height: 58;
+}
+
+.sgContentCardImg {
+    height: 255px;
+}
+
+.sgCardDescription {
+    height: 72px;
+}
+
 .sgHight_100px {
     height: 100px
 }
@@ -57,6 +69,10 @@ body {
 .sgIcon_24 {
     height: 24px;
     width: 24px;
+}
+
+.sgIcon_32 {
+    height: 32px;
 }
 
 
